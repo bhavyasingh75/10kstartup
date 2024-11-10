@@ -148,7 +148,7 @@ export default function RegretOMeter() {
     for (const [_, scenario] of Object.entries(specificScenarios)) {
       const matchedKeywords = scenario.keywords.filter(keyword => text.includes(keyword))
       if (matchedKeywords.length > 0) {
-        scenarioScore = scenario.score * (1 + Math.random())
+        scenarioScore = Math.floor(scenario.score * (1 + Math.random()))
         scenarioMessage = scenario.message
         break
       }
@@ -158,19 +158,19 @@ export default function RegretOMeter() {
 
     // Increase length-based bonus
     if (text.length > 100) {
-      totalScore += 15 // Increased from 10
+      totalScore += 15
     }
 
     // Analyze sentiment with higher impact
     const negativeWords = ['bad', 'wrong', 'mistake', 'regret', 'worried', 'scared', 'nervous']
     const negativeCount = negativeWords.filter(word => text.includes(word)).length
-    totalScore += negativeCount * 8 // Increased from 5
+    totalScore += negativeCount * 8
 
     // Add final random variance (-15 to +15)
     totalScore += Math.floor(Math.random() * 30) - 15
 
-    // Cap the total score at 100
-    totalScore = Math.min(Math.max(totalScore, 0), 100)
+    // Cap the total score at 100 and ensure it's a whole number
+    totalScore = Math.floor(Math.min(Math.max(totalScore, 0), 100))
 
     const claimAmount = calculateClaimAmount(totalScore)
     

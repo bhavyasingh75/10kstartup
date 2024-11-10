@@ -5,15 +5,11 @@ export default function Home() {
     <div className="min-h-screen flex flex-col items-center justify-center p-8 bg-gradient-to-b from-purple-50 to-pink-50">
       <main className="max-w-3xl mx-auto text-center space-y-8">
         <h1 className="text-5xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 text-transparent bg-clip-text">
-          Rent-a-Regret
+          Pachta-wah!
         </h1>
         
-        <p className="text-xl text-gray-600 italic">
-          More Regrets, Less Commitment
-        </p>
-        
-        <p className="text-lg text-gray-500">
-          For every questionable choice, there&apos;s Rent-a-Regret!
+        <p className="text-lg text-gray-600">
+          Every Pachta-wah gets a second chance!
         </p>
 
         <div className="grid gap-6 mt-12 md:grid-cols-3">
@@ -34,7 +30,7 @@ export default function Home() {
             className="transform transition-all duration-300 hover:scale-105 hover:rotate-1 p-6 bg-white rounded-xl shadow-lg hover:shadow-xl border-2 border-pink-200"
           >
             <h2 className="text-xl font-semibold text-pink-600 mb-2">
-              Get Regret Insurance
+              Get Pachta-wah Insurance
             </h2>
             <p className="text-gray-600 text-sm">
               Protect yourself against future regrets!
@@ -46,7 +42,7 @@ export default function Home() {
             className="transform transition-all duration-300 hover:scale-105 hover:-rotate-1 p-6 bg-white rounded-xl shadow-lg hover:shadow-xl border-2 border-purple-200"
           >
             <h2 className="text-xl font-semibold text-purple-600 mb-2">
-              Book Regret Therapy
+              Book Pachta-wah Therapy
             </h2>
             <p className="text-gray-600 text-sm">
               Professional help for your regrettable decisions
