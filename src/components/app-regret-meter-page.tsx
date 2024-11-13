@@ -6,8 +6,8 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Frown, Meh, Smile } from "lucide-react"
 import Link from 'next/link'
+import { FaSmile, FaMeh, FaSadTear } from 'react-icons/fa'
 
 export function BlockPage() {
   const [action, setAction] = useState('')
@@ -20,15 +20,24 @@ export function BlockPage() {
     setIsCalculating(true)
     // Simulate calculation delay for better UX
     await new Promise(resolve => setTimeout(resolve, 1000))
-    const score = Math.floor(Math.random() * 100)
+    const score = Math.floor(Math.random() * 101)
     setRegretScore(score)
     setIsCalculating(false)
   }
 
   const getRegretMessage = (score: number) => {
-    if (score < 30) return { message: 'No regrets... probably.', icon: <Smile className="w-8 h-8 text-green-500" /> }
-    if (score < 60) return { message: 'Medium chance of regret—proceed with caution!', icon: <Meh className="w-8 h-8 text-yellow-500" /> }
-    return { message: 'High chance of regret—think again!', icon: <Frown className="w-8 h-8 text-red-500" /> }
+    if (score < 30) return { 
+      message: 'No regrets... probably.',
+      icon: <FaSmile className="text-3xl text-green-500" />
+    }
+    if (score < 60) return { 
+      message: 'Medium chance of regret—proceed with caution!',
+      icon: <FaMeh className="text-3xl text-yellow-500" />
+    }
+    return { 
+      message: 'High chance of regret—think again!',
+      icon: <FaSadTear className="text-3xl text-red-500" />
+    }
   }
 
   const resetCalculator = () => {
@@ -42,7 +51,7 @@ export function BlockPage() {
         <CardHeader>
           <CardTitle className="text-3xl text-center font-bold bg-gradient-to-r from-purple-600 to-pink-600 text-transparent bg-clip-text">
             Regret-o-Meter
-          </CardTitle>
+          </CardTitle> 
           <CardDescription className="text-center text-lg">
             Calculate your potential regret before it happens!
           </CardDescription>
